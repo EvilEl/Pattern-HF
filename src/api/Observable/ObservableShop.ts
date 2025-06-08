@@ -1,4 +1,4 @@
-import type { IObservable, IObserver } from "../types";
+import type { IObservable, IObserver } from "../../types";
 
 export class ObservableShop<K> implements IObservable<K> {
   private subscribers: Map<K, IObserver>
@@ -32,9 +32,3 @@ export class ObservableShop<K> implements IObservable<K> {
     this.notifySubscribers()
   }
 }
-
-
-
-
-
-

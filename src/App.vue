@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { ObservableShop } from "./api/ObservableShop";
-import { UserOne } from "./api/UserOne";
-import { UserTwo } from "./api/UserTwo";
+import { ObservableShop } from "./api/Observable/ObservableShop";
+import { UserOne } from "./api/Observable/UserOne";
+import { UserTwo } from "./api/Observable/UserTwo";
+
+import { Human, Fast, Slow, Running } from "./api/Strategy/Strategy";
 
 const shop = new ObservableShop<string>();
 const user = new UserOne(shop);
 const userTwo = new UserTwo(shop);
+
+const strategyHuman = new Human("Jon Doe", 25, new Fast());
 </script>
 
 <template>
+  <h2>Наблюдатель</h2>
   <div>
     user 1 - {{ user.book }}
     <button @click="user.addedSubscribe">Подписаться</button>
@@ -23,4 +28,19 @@ const userTwo = new UserTwo(shop);
   </div>
   <br />
   <button @click="shop.setBook(Math.random() * 100 * 100)">Обновить</button>
+  <br />
+  <br />
+  <br />
+  <h2>Стратегия</h2>
+  <div>
+    <button @click="strategyHuman.setMove(new Slow())">
+      Будет идти медленно
+    </button>
+    <button @click="strategyHuman.setMove(new Fast())">
+      Будет идти быстро
+    </button>
+    <button @click="strategyHuman.setMove(new Running())">Будет Бежать</button>
+  </div>
+
+  <button @click="strategyHuman.move">Как я иду ?(в консоль лог пишет)</button>
 </template>
