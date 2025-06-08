@@ -17,11 +17,9 @@ export class ObservableShop<K> implements IObservable<K> {
   }
 
   notifySubscribers() {
-    const keys = this.subscribers.keys()
-    Array.from(keys).forEach(key => {
-      const sub = this.subscribers.get(key)
-      sub?.update(this.book)
-    })
+    this.subscribers.forEach(subscriber => {
+      subscriber.update(this.book);
+    });
   }
 
   setBook(count: number) {
