@@ -1,33 +1,37 @@
 import type { IObservable, IObserver } from "../types";
 
 export class ObservableShop<K> implements IObservable<K> {
-  subscribers: Map<K, IObserver>
-  book: number
+  private subscribers: Map<K, IObserver>
+  private book: number
   constructor() {
     this.subscribers = new Map()
     this.book = 0
   }
 
-  addedSubscribe(key: K, value: IObserver) {
+  public addedSubscribe(key: K, value: IObserver) {
     this.subscribers.set(key, value)
   }
 
-  removeSubscribe(key: K) {
+  public removeSubscribe(key: K) {
     this.subscribers.delete(key)
   }
 
-  notifySubscribers() {
+  public notifySubscribers() {
     this.subscribers.forEach(subscriber => {
-      subscriber.update(this.book);
+      subscriber.update();
     });
   }
 
-  setBook(count: number) {
+
+  public getBook() {
+    return this.book
+  }
+
+  public setBook(count: number) {
     this.book = count
     this.notifySubscribers()
   }
 }
-
 
 
 

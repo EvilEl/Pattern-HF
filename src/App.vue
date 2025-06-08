@@ -13,11 +13,13 @@ const userTwo = new UserTwo(shop);
     user 1 - {{ user.book }}
     <button @click="user.addedSubscribe">Подписаться</button>
     <button @click="user.removeSubscribe">Отписаться</button>
+    <button @click="user.update">Обновить</button>
   </div>
   <div>
     user 2 - {{ userTwo.book }}
     <button @click="userTwo.addedSubscribe">Подписаться</button>
     <button @click="userTwo.removeSubscribe">Отписаться</button>
+    <button @click="userTwo.update">Обновить</button>
   </div>
   <br />
   <button @click="shop.setBook(Math.random() * 100 * 100)">Обновить</button>

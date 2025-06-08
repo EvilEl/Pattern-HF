@@ -4,21 +4,21 @@ import type { ObservableShop } from "./ObservableShop";
 
 export class UserOne implements IObserver {
   private _book: Ref<number>
-  shopData: ObservableShop<string>
+  private shopData: ObservableShop<string>
   constructor(shopData: ObservableShop<string>) {
     this._book = ref(0)
     this.shopData = shopData
     this.shopData.addedSubscribe('UserOne', this)
   }
-  update(book: number) {
-    this._book.value = book
+  public update() {
+    this._book.value = this.shopData.getBook()
   }
 
-  removeSubscribe() {
+  public removeSubscribe() {
     this.shopData.removeSubscribe('UserOne')
   }
 
-  addedSubscribe() {
+  public addedSubscribe() {
     this.shopData.addedSubscribe('UserOne', this)
   }
 
