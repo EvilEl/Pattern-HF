@@ -16,51 +16,14 @@ export class CAPizzaStore extends PizzaStore {
 }
 
 class CAStyleCheesePizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
 
-  }
-  box() {
-
-  }
 }
 class CAStyleVeggiePizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
 
-  }
-  box() {
-
-  }
 }
 class CAStyleClamPizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
 
-  }
-  box() {
-
-  }
 }
 class CAStylePepperoniPizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
-
-  }
-  box() {
-
-  }
 
 }

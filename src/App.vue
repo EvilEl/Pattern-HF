@@ -18,6 +18,12 @@ const clothes = computed(() => {
   console.log("computed", michael);
   return michael;
 });
+
+const nyPizza = new NYPizzaStore();
+
+const cheesePizza = nyPizza.orderPizza("cheese");
+
+console.log(cheesePizza.getName());
 </script>
 
 <template>

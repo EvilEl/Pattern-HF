@@ -4,11 +4,10 @@ export abstract class Pizza {
   constructor() {
     this.name = ''
   }
-  abstract prepare(): void
-  abstract bake(): void
-  abstract cut(): void
-  abstract box(): void
-
+  prepare() { }
+  bake() { }
+  cut() { }
+  box() { }
   getName() {
     return this.name
   }

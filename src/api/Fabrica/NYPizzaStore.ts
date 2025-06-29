@@ -22,52 +22,15 @@ class NYStyleCheesePizza extends Pizza {
     super()
     this.name = 'CheesePizza'
   }
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
-
-  }
-  box() {
-
-  }
 }
 class NYStyleVeggiePizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
 
-  }
-  box() {
-
-  }
 }
 class NYStyleClamPizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
 
-  }
-  box() {
-
-  }
 }
 class NYStylePepperoniPizza extends Pizza {
-  prepare() {
-  }
-  bake() {
-  }
-  cut() {
 
-  }
-  box() {
-
-  }
 }
 
 
