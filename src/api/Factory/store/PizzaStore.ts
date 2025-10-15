@@ -1,4 +1,4 @@
-import { Pizza } from "./Pizza";
+import { Pizza } from "../pizza/Pizza";
 
 
 export type TypePizza = 'veggie' | 'clam' | 'pepperoni' | 'cheese'

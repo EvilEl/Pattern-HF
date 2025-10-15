@@ -5,7 +5,8 @@ import { UserOne } from "./api/Observable/UserOne";
 import { UserTwo } from "./api/Observable/UserTwo";
 import { Shirt, Shoes, MichaelHuman } from "./api/Decorator/ClothesHuman.ts";
 import { Human, Fast, Slow, Running } from "./api/Strategy/Strategy";
-import { NYPizzaStore } from "./api/Fabrica/NYPizzaStore.ts";
+import { NYPizzaStore } from "./api/Factory/NYPizzaStore.ts";
+import { CHPizzaStore } from "./api/Factory/store/CHPizzaStore.ts";
 
 const shop = new ObservableShop<string>();
 const user = new UserOne(shop);
@@ -19,11 +20,10 @@ const clothes = computed(() => {
   return michael;
 });
 
-const nyPizza = new NYPizzaStore();
+const chPizza = new CHPizzaStore();
+chPizza.orderPizza("cheese");
 
-const cheesePizza = nyPizza.orderPizza("cheese");
 
-console.log(cheesePizza.getName());
 </script>
 
 <template>
