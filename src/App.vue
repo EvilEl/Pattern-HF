@@ -7,6 +7,7 @@ import { Shirt, Shoes, MichaelHuman } from "./api/Decorator/ClothesHuman.ts";
 import { Human, Fast, Slow, Running } from "./api/Strategy/Strategy";
 import { NYPizzaStore } from "./api/Factory/NYPizzaStore.ts";
 import { CHPizzaStore } from "./api/Factory/store/CHPizzaStore.ts";
+import { ChocolateBoilerTwo } from './api/Singleton/singleton.ts'
 
 const shop = new ObservableShop<string>();
 const user = new UserOne(shop);
@@ -22,8 +23,6 @@ const clothes = computed(() => {
 
 const chPizza = new CHPizzaStore();
 chPizza.orderPizza("cheese");
-
-
 </script>
 
 <template>
@@ -35,6 +34,7 @@ chPizza.orderPizza("cheese");
     <button class="ml-1" @click="user.update">Обновить</button>
   </div>
   <div>
+  {{ clothes }}clothes
     user 2 - {{ userTwo.book }}
     <button class="ml-1" @click="userTwo.addedSubscribe">Подписаться</button>
     <button class="ml-1" @click="userTwo.removeSubscribe">Отписаться</button>
