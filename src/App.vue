@@ -8,6 +8,7 @@ import { Human, Fast, Slow, Running } from "./api/Strategy/Strategy";
 import { NYPizzaStore } from "./api/Factory/NYPizzaStore.ts";
 import { CHPizzaStore } from "./api/Factory/store/CHPizzaStore.ts";
 import { ChocolateBoilerTwo } from './api/Singleton/singleton.ts'
+import {RemoteControlTest} from './api/Command/RemoteControlTest'
 
 const shop = new ObservableShop<string>();
 const user = new UserOne(shop);
@@ -23,6 +24,10 @@ const clothes = computed(() => {
 
 const chPizza = new CHPizzaStore();
 chPizza.orderPizza("cheese");
+
+
+//Проерка паттерна команды
+RemoteControlTest.main()
 </script>
 
 <template>
