@@ -1,7 +1,7 @@
 import type { Command } from "../Command";
 import type { Light } from "./Light";
 
-export class LightOff implements Command {
+export class LightOffCommand implements Command {
   light:Light
 
   constructor(light:Light){
@@ -10,5 +10,9 @@ export class LightOff implements Command {
 
   execute(){
     this.light.off()
+  }
+
+  undo(){
+    this.light.on()
   }
 }

@@ -13,4 +13,11 @@ export class StereoOnForCommand implements Command {
     this.stereo.setSd()
     this.stereo.setVolume(15)
   }
+
+
+  undo(){
+    this.stereo.off()
+    this.stereo.removeCd()
+    this.stereo.setVolume(0)
+  }
 }

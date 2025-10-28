@@ -17,4 +17,8 @@ export class Stereo {
   public setSd(){
     console.log('Stereo set sd');
   }
+
+  public removeCd(){
+    console.log('Stereo remove cd');
+  }
 }

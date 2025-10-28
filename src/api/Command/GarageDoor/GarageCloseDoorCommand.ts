@@ -10,4 +10,8 @@ export class GarageCloseDoor implements Command {
   execute(): void {
     this.garageDoor.down
   }
+
+  undo(): void {
+    this.garageDoor.up
+  }
 }
