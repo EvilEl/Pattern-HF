@@ -3,7 +3,7 @@ import { ENUM_CEILING_FAN_SPEED, type CeilingFan } from "./CeilingFan"
 
 export class CeilingFanMediumCommand implements Command  {
   ceilingFan: CeilingFan
-  prevSpeed: number = 0
+  prevSpeed: number = 2
 
   constructor(ceilingFan:CeilingFan){
     this.ceilingFan = ceilingFan
@@ -11,7 +11,7 @@ export class CeilingFanMediumCommand implements Command  {
 
   execute(){
     this.prevSpeed = this.ceilingFan.getSpeed()
-    this.ceilingFan.low()
+    this.ceilingFan.medium()
   }
 
   undo(){

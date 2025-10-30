@@ -9,7 +9,7 @@ import { NYPizzaStore } from "./api/Factory/NYPizzaStore.ts";
 import { CHPizzaStore } from "./api/Factory/store/CHPizzaStore.ts";
 import { ChocolateBoilerTwo } from './api/Singleton/singleton.ts'
 import {RemoteControlTest} from './api/Command/RemoteControlTest'
-
+import {RemoteLoader} from './api/Command/remoteLoader'
 const shop = new ObservableShop<string>();
 const user = new UserOne(shop);
 const userTwo = new UserTwo(shop);
@@ -27,7 +27,8 @@ chPizza.orderPizza("cheese");
 
 
 //Проерка паттерна команды
-RemoteControlTest.main()
+// RemoteControlTest.main()
+RemoteLoader.main()
 </script>
 
 <template>

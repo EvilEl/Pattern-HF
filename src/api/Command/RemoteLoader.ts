@@ -5,16 +5,30 @@ import { LightOffCommand } from "./Light/LightOffCommand";
 import { CeilingFan } from "./CeilingFan/CeilingFan";
 import { CeilingFanHighCommand } from "./CeilingFan/CeilingFanHighCommand";
 import { CeilingFanOffCommand } from "./CeilingFan/CeilingFanOffCommand";
+import { CeilingFanMediumCommand } from "./CeilingFan/CeilingFanMediumCommand";
 
 export class RemoteLoader{
   constructor(){
-    const remoteControl = new RemoteControl()
-    const kitchenRoom = new Light('kitchen')
-    const livingRoom = new Light('living room')
-    const ceilingFan = new CeilingFan('Living room')
 
-    remoteControl.setCommand(0,new LightOnCommand(kitchenRoom), new LightOffCommand(kitchenRoom))
-    remoteControl.setCommand(1,new LightOnCommand(livingRoom), new LightOffCommand(livingRoom))
-    remoteControl.setCommand(2,new CeilingFanHighCommand(ceilingFan), new CeilingFanOffCommand(ceilingFan))
+  }
+
+ static main(){
+    const remoteControl = new RemoteControl()
+
+    const ceilingFan = new CeilingFan('Living Room')
+    const ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan)
+    const ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan)
+    const ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan  )
+    
+    remoteControl.setCommand(0,ceilingFanMediumCommand, ceilingFanOffCommand)
+    remoteControl.setCommand(1,ceilingFanHighCommand, ceilingFanOffCommand)
+
+    remoteControl.onButtonWasPressed(0)
+    remoteControl.offButtonWasPressed(0)
+    remoteControl.undoButtonWasPressed()
+
+    remoteControl.onButtonWasPressed(1)
+    remoteControl.undoButtonWasPressed()
+
   }
 }
